@@ -1,2 +1,5 @@
-package org.example.dubbo;public class GreetingService {
+package org.example.dubbo;
+
+public interface GreetingService {
+    String sayHello(String name);
 }
