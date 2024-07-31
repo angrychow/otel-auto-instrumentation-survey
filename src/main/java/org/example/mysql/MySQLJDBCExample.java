@@ -30,7 +30,7 @@ public class MySQLJDBCExample {
                 Random random = new Random();
                 String[] names = {"Alice", "Bob", "Charlie", "David", "Eve"};
 
-                for (int i = 0; i < 100000; i++) {
+                for (int i = 0; i < 10000000; i++) {
                     int operation = random.nextInt(3); // 0: 插入, 1: 查询, 2: 删除
                     String name = names[random.nextInt(names.length)];
                     int age = random.nextInt(100);

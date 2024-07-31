@@ -9,7 +9,7 @@ public class JettyServer {
 
     public static void main(String[] args) throws Exception {
         // 创建 Jetty 服务器
-        Server server = new Server(8080);
+        Server server = new Server(9070);
 
         // 创建 Servlet 上下文处理器
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);

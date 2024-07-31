@@ -14,7 +14,7 @@ public class JedisExecute {
         Random random = new Random();
 
         try (Jedis jedis = new Jedis("localhost", 6379)) {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10000000; i++) {
                 // 随机选择一个 key
                 String key = keys[random.nextInt(keys.length)];
 
@@ -29,7 +29,10 @@ public class JedisExecute {
 
                 // 输出结果
                 System.out.println("The value of '" + key + "' is: " + retrievedValue);
+                Thread.sleep(1);
             }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }
