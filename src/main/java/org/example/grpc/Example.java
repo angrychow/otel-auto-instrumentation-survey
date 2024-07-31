@@ -4,8 +4,8 @@
 // Protobuf Java Version: 3.25.2
 package org.example.grpc;
 
-public final class ExampleProto {
-  private ExampleProto() {}
+public final class Example {
+  private Example() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -15,91 +15,195 @@ public final class ExampleProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface HelloRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:HelloRequest)
+  public interface ServiceRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:test.ServiceRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1;</code>
-     * @return The name.
+     * <code>string param1 = 1;</code>
+     * @return The param1.
      */
-    java.lang.String getName();
+    java.lang.String getParam1();
     /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
+     * <code>string param1 = 1;</code>
+     * @return The bytes for param1.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getParam1Bytes();
+
+    /**
+     * <code>string param2 = 2;</code>
+     * @return The param2.
+     */
+    java.lang.String getParam2();
+    /**
+     * <code>string param2 = 2;</code>
+     * @return The bytes for param2.
+     */
+    com.google.protobuf.ByteString
+        getParam2Bytes();
+
+    /**
+     * <code>string param3 = 3;</code>
+     * @return The param3.
+     */
+    java.lang.String getParam3();
+    /**
+     * <code>string param3 = 3;</code>
+     * @return The bytes for param3.
+     */
+    com.google.protobuf.ByteString
+        getParam3Bytes();
   }
   /**
-   * Protobuf type {@code HelloRequest}
+   * Protobuf type {@code test.ServiceRequest}
    */
-  public static final class HelloRequest extends
+  public static final class ServiceRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:HelloRequest)
-      HelloRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:test.ServiceRequest)
+      ServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use HelloRequest.newBuilder() to construct.
-    private HelloRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ServiceRequest.newBuilder() to construct.
+    private ServiceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private HelloRequest() {
-      name_ = "";
+    private ServiceRequest() {
+      param1_ = "";
+      param2_ = "";
+      param3_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new HelloRequest();
+      return new ServiceRequest();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.example.grpc.ExampleProto.internal_static_HelloRequest_descriptor;
+      return Example.internal_static_test_ServiceRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.example.grpc.ExampleProto.internal_static_HelloRequest_fieldAccessorTable
+      return Example.internal_static_test_ServiceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.example.grpc.ExampleProto.HelloRequest.class, org.example.grpc.ExampleProto.HelloRequest.Builder.class);
+              Example.ServiceRequest.class, Example.ServiceRequest.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
+    public static final int PARAM1_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
+    private volatile java.lang.Object param1_ = "";
     /**
-     * <code>string name = 1;</code>
-     * @return The name.
+     * <code>string param1 = 1;</code>
+     * @return The param1.
      */
     @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getParam1() {
+      java.lang.Object ref = param1_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        param1_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
+     * <code>string param1 = 1;</code>
+     * @return The bytes for param1.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getParam1Bytes() {
+      java.lang.Object ref = param1_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        param1_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARAM2_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object param2_ = "";
+    /**
+     * <code>string param2 = 2;</code>
+     * @return The param2.
+     */
+    @java.lang.Override
+    public java.lang.String getParam2() {
+      java.lang.Object ref = param2_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        param2_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string param2 = 2;</code>
+     * @return The bytes for param2.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getParam2Bytes() {
+      java.lang.Object ref = param2_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        param2_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARAM3_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object param3_ = "";
+    /**
+     * <code>string param3 = 3;</code>
+     * @return The param3.
+     */
+    @java.lang.Override
+    public java.lang.String getParam3() {
+      java.lang.Object ref = param3_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        param3_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string param3 = 3;</code>
+     * @return The bytes for param3.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getParam3Bytes() {
+      java.lang.Object ref = param3_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        param3_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -120,8 +224,14 @@ public final class ExampleProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(param1_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, param1_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(param2_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, param2_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(param3_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, param3_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -132,8 +242,14 @@ public final class ExampleProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(param1_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, param1_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(param2_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, param2_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(param3_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, param3_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -145,13 +261,17 @@ public final class ExampleProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.example.grpc.ExampleProto.HelloRequest)) {
+      if (!(obj instanceof Example.ServiceRequest)) {
         return super.equals(obj);
       }
-      org.example.grpc.ExampleProto.HelloRequest other = (org.example.grpc.ExampleProto.HelloRequest) obj;
+      Example.ServiceRequest other = (Example.ServiceRequest) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (!getParam1()
+          .equals(other.getParam1())) return false;
+      if (!getParam2()
+          .equals(other.getParam2())) return false;
+      if (!getParam3()
+          .equals(other.getParam3())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -163,51 +283,55 @@ public final class ExampleProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + PARAM1_FIELD_NUMBER;
+      hash = (53 * hash) + getParam1().hashCode();
+      hash = (37 * hash) + PARAM2_FIELD_NUMBER;
+      hash = (53 * hash) + getParam2().hashCode();
+      hash = (37 * hash) + PARAM3_FIELD_NUMBER;
+      hash = (53 * hash) + getParam3().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(
+    public static Example.ServiceRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(
+    public static Example.ServiceRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(
+    public static Example.ServiceRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(
+    public static Example.ServiceRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(byte[] data)
+    public static Example.ServiceRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(
+    public static Example.ServiceRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(java.io.InputStream input)
+    public static Example.ServiceRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(
+    public static Example.ServiceRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -215,26 +339,26 @@ public final class ExampleProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.example.grpc.ExampleProto.HelloRequest parseDelimitedFrom(java.io.InputStream input)
+    public static Example.ServiceRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.example.grpc.ExampleProto.HelloRequest parseDelimitedFrom(
+    public static Example.ServiceRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(
+    public static Example.ServiceRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.example.grpc.ExampleProto.HelloRequest parseFrom(
+    public static Example.ServiceRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -247,7 +371,7 @@ public final class ExampleProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.example.grpc.ExampleProto.HelloRequest prototype) {
+    public static Builder newBuilder(Example.ServiceRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -263,26 +387,26 @@ public final class ExampleProto {
       return builder;
     }
     /**
-     * Protobuf type {@code HelloRequest}
+     * Protobuf type {@code test.ServiceRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:HelloRequest)
-        org.example.grpc.ExampleProto.HelloRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:test.ServiceRequest)
+        Example.ServiceRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.example.grpc.ExampleProto.internal_static_HelloRequest_descriptor;
+        return Example.internal_static_test_ServiceRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.example.grpc.ExampleProto.internal_static_HelloRequest_fieldAccessorTable
+        return Example.internal_static_test_ServiceRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.example.grpc.ExampleProto.HelloRequest.class, org.example.grpc.ExampleProto.HelloRequest.Builder.class);
+                Example.ServiceRequest.class, Example.ServiceRequest.Builder.class);
       }
 
-      // Construct using org.example.grpc.ExampleProto.HelloRequest.newBuilder()
+      // Construct using org.example.grpc.Example.ServiceRequest.newBuilder()
       private Builder() {
 
       }
@@ -296,24 +420,26 @@ public final class ExampleProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        name_ = "";
+        param1_ = "";
+        param2_ = "";
+        param3_ = "";
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.example.grpc.ExampleProto.internal_static_HelloRequest_descriptor;
+        return Example.internal_static_test_ServiceRequest_descriptor;
       }
 
       @java.lang.Override
-      public org.example.grpc.ExampleProto.HelloRequest getDefaultInstanceForType() {
-        return org.example.grpc.ExampleProto.HelloRequest.getDefaultInstance();
+      public Example.ServiceRequest getDefaultInstanceForType() {
+        return Example.ServiceRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.example.grpc.ExampleProto.HelloRequest build() {
-        org.example.grpc.ExampleProto.HelloRequest result = buildPartial();
+      public Example.ServiceRequest build() {
+        Example.ServiceRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -321,17 +447,23 @@ public final class ExampleProto {
       }
 
       @java.lang.Override
-      public org.example.grpc.ExampleProto.HelloRequest buildPartial() {
-        org.example.grpc.ExampleProto.HelloRequest result = new org.example.grpc.ExampleProto.HelloRequest(this);
+      public Example.ServiceRequest buildPartial() {
+        Example.ServiceRequest result = new Example.ServiceRequest(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.example.grpc.ExampleProto.HelloRequest result) {
+      private void buildPartial0(Example.ServiceRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.name_ = name_;
+          result.param1_ = param1_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.param2_ = param2_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.param3_ = param3_;
         }
       }
 
@@ -369,19 +501,29 @@ public final class ExampleProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.grpc.ExampleProto.HelloRequest) {
-          return mergeFrom((org.example.grpc.ExampleProto.HelloRequest)other);
+        if (other instanceof Example.ServiceRequest) {
+          return mergeFrom((Example.ServiceRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.example.grpc.ExampleProto.HelloRequest other) {
-        if (other == org.example.grpc.ExampleProto.HelloRequest.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+      public Builder mergeFrom(Example.ServiceRequest other) {
+        if (other == Example.ServiceRequest.getDefaultInstance()) return this;
+        if (!other.getParam1().isEmpty()) {
+          param1_ = other.param1_;
           bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getParam2().isEmpty()) {
+          param2_ = other.param2_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getParam3().isEmpty()) {
+          param3_ = other.param3_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -411,10 +553,20 @@ public final class ExampleProto {
                 done = true;
                 break;
               case 10: {
-                name_ = input.readStringRequireUtf8();
+                param1_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+              case 18: {
+                param2_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                param3_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -432,74 +584,218 @@ public final class ExampleProto {
       }
       private int bitField0_;
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object param1_ = "";
       /**
-       * <code>string name = 1;</code>
-       * @return The name.
+       * <code>string param1 = 1;</code>
+       * @return The param1.
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getParam1() {
+        java.lang.Object ref = param1_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          param1_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 1;</code>
-       * @return The bytes for name.
+       * <code>string param1 = 1;</code>
+       * @return The bytes for param1.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getParam1Bytes() {
+        java.lang.Object ref = param1_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          param1_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 1;</code>
-       * @param value The name to set.
+       * <code>string param1 = 1;</code>
+       * @param value The param1 to set.
        * @return This builder for chaining.
        */
-      public Builder setName(
+      public Builder setParam1(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        name_ = value;
+        param1_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1;</code>
+       * <code>string param1 = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearName() {
-        name_ = getDefaultInstance().getName();
+      public Builder clearParam1() {
+        param1_ = getDefaultInstance().getParam1();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 1;</code>
-       * @param value The bytes for name to set.
+       * <code>string param1 = 1;</code>
+       * @param value The bytes for param1 to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(
+      public Builder setParam1Bytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        name_ = value;
+        param1_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object param2_ = "";
+      /**
+       * <code>string param2 = 2;</code>
+       * @return The param2.
+       */
+      public java.lang.String getParam2() {
+        java.lang.Object ref = param2_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          param2_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string param2 = 2;</code>
+       * @return The bytes for param2.
+       */
+      public com.google.protobuf.ByteString
+          getParam2Bytes() {
+        java.lang.Object ref = param2_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          param2_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string param2 = 2;</code>
+       * @param value The param2 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam2(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        param2_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string param2 = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam2() {
+        param2_ = getDefaultInstance().getParam2();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string param2 = 2;</code>
+       * @param value The bytes for param2 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam2Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        param2_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object param3_ = "";
+      /**
+       * <code>string param3 = 3;</code>
+       * @return The param3.
+       */
+      public java.lang.String getParam3() {
+        java.lang.Object ref = param3_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          param3_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string param3 = 3;</code>
+       * @return The bytes for param3.
+       */
+      public com.google.protobuf.ByteString
+          getParam3Bytes() {
+        java.lang.Object ref = param3_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          param3_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string param3 = 3;</code>
+       * @param value The param3 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam3(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        param3_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string param3 = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam3() {
+        param3_ = getDefaultInstance().getParam3();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string param3 = 3;</code>
+       * @param value The bytes for param3 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam3Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        param3_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -516,23 +812,23 @@ public final class ExampleProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:HelloRequest)
+      // @@protoc_insertion_point(builder_scope:test.ServiceRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:HelloRequest)
-    private static final org.example.grpc.ExampleProto.HelloRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:test.ServiceRequest)
+    private static final Example.ServiceRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.example.grpc.ExampleProto.HelloRequest();
+      DEFAULT_INSTANCE = new Example.ServiceRequest();
     }
 
-    public static org.example.grpc.ExampleProto.HelloRequest getDefaultInstance() {
+    public static Example.ServiceRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<HelloRequest>
-        PARSER = new com.google.protobuf.AbstractParser<HelloRequest>() {
+    private static final com.google.protobuf.Parser<ServiceRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ServiceRequest>() {
       @java.lang.Override
-      public HelloRequest parsePartialFrom(
+      public ServiceRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -551,107 +847,107 @@ public final class ExampleProto {
       }
     };
 
-    public static com.google.protobuf.Parser<HelloRequest> parser() {
+    public static com.google.protobuf.Parser<ServiceRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<HelloRequest> getParserForType() {
+    public com.google.protobuf.Parser<ServiceRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.example.grpc.ExampleProto.HelloRequest getDefaultInstanceForType() {
+    public Example.ServiceRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface HelloReplyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:HelloReply)
+  public interface ServiceResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:test.ServiceResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string message = 1;</code>
-     * @return The message.
+     * <code>string result = 1;</code>
+     * @return The result.
      */
-    java.lang.String getMessage();
+    java.lang.String getResult();
     /**
-     * <code>string message = 1;</code>
-     * @return The bytes for message.
+     * <code>string result = 1;</code>
+     * @return The bytes for result.
      */
     com.google.protobuf.ByteString
-        getMessageBytes();
+        getResultBytes();
   }
   /**
-   * Protobuf type {@code HelloReply}
+   * Protobuf type {@code test.ServiceResponse}
    */
-  public static final class HelloReply extends
+  public static final class ServiceResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:HelloReply)
-      HelloReplyOrBuilder {
+      // @@protoc_insertion_point(message_implements:test.ServiceResponse)
+      ServiceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use HelloReply.newBuilder() to construct.
-    private HelloReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ServiceResponse.newBuilder() to construct.
+    private ServiceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private HelloReply() {
-      message_ = "";
+    private ServiceResponse() {
+      result_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new HelloReply();
+      return new ServiceResponse();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.example.grpc.ExampleProto.internal_static_HelloReply_descriptor;
+      return Example.internal_static_test_ServiceResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.example.grpc.ExampleProto.internal_static_HelloReply_fieldAccessorTable
+      return Example.internal_static_test_ServiceResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.example.grpc.ExampleProto.HelloReply.class, org.example.grpc.ExampleProto.HelloReply.Builder.class);
+              Example.ServiceResponse.class, Example.ServiceResponse.Builder.class);
     }
 
-    public static final int MESSAGE_FIELD_NUMBER = 1;
+    public static final int RESULT_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
+    private volatile java.lang.Object result_ = "";
     /**
-     * <code>string message = 1;</code>
-     * @return The message.
+     * <code>string result = 1;</code>
+     * @return The result.
      */
     @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        message_ = s;
+        result_ = s;
         return s;
       }
     }
     /**
-     * <code>string message = 1;</code>
-     * @return The bytes for message.
+     * <code>string result = 1;</code>
+     * @return The bytes for result.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
+        getResultBytes() {
+      java.lang.Object ref = result_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        message_ = b;
+        result_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -672,8 +968,8 @@ public final class ExampleProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(result_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -684,8 +980,8 @@ public final class ExampleProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(result_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -697,13 +993,13 @@ public final class ExampleProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.example.grpc.ExampleProto.HelloReply)) {
+      if (!(obj instanceof Example.ServiceResponse)) {
         return super.equals(obj);
       }
-      org.example.grpc.ExampleProto.HelloReply other = (org.example.grpc.ExampleProto.HelloReply) obj;
+      Example.ServiceResponse other = (Example.ServiceResponse) obj;
 
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
+      if (!getResult()
+          .equals(other.getResult())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -715,51 +1011,51 @@ public final class ExampleProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getResult().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(
+    public static Example.ServiceResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(
+    public static Example.ServiceResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(
+    public static Example.ServiceResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(
+    public static Example.ServiceResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(byte[] data)
+    public static Example.ServiceResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(
+    public static Example.ServiceResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(java.io.InputStream input)
+    public static Example.ServiceResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(
+    public static Example.ServiceResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -767,26 +1063,26 @@ public final class ExampleProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.example.grpc.ExampleProto.HelloReply parseDelimitedFrom(java.io.InputStream input)
+    public static Example.ServiceResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.example.grpc.ExampleProto.HelloReply parseDelimitedFrom(
+    public static Example.ServiceResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(
+    public static Example.ServiceResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.example.grpc.ExampleProto.HelloReply parseFrom(
+    public static Example.ServiceResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -799,7 +1095,7 @@ public final class ExampleProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.example.grpc.ExampleProto.HelloReply prototype) {
+    public static Builder newBuilder(Example.ServiceResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -815,26 +1111,26 @@ public final class ExampleProto {
       return builder;
     }
     /**
-     * Protobuf type {@code HelloReply}
+     * Protobuf type {@code test.ServiceResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:HelloReply)
-        org.example.grpc.ExampleProto.HelloReplyOrBuilder {
+        // @@protoc_insertion_point(builder_implements:test.ServiceResponse)
+        Example.ServiceResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.example.grpc.ExampleProto.internal_static_HelloReply_descriptor;
+        return Example.internal_static_test_ServiceResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.example.grpc.ExampleProto.internal_static_HelloReply_fieldAccessorTable
+        return Example.internal_static_test_ServiceResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.example.grpc.ExampleProto.HelloReply.class, org.example.grpc.ExampleProto.HelloReply.Builder.class);
+                Example.ServiceResponse.class, Example.ServiceResponse.Builder.class);
       }
 
-      // Construct using org.example.grpc.ExampleProto.HelloReply.newBuilder()
+      // Construct using org.example.grpc.Example.ServiceResponse.newBuilder()
       private Builder() {
 
       }
@@ -848,24 +1144,24 @@ public final class ExampleProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        message_ = "";
+        result_ = "";
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.example.grpc.ExampleProto.internal_static_HelloReply_descriptor;
+        return Example.internal_static_test_ServiceResponse_descriptor;
       }
 
       @java.lang.Override
-      public org.example.grpc.ExampleProto.HelloReply getDefaultInstanceForType() {
-        return org.example.grpc.ExampleProto.HelloReply.getDefaultInstance();
+      public Example.ServiceResponse getDefaultInstanceForType() {
+        return Example.ServiceResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.example.grpc.ExampleProto.HelloReply build() {
-        org.example.grpc.ExampleProto.HelloReply result = buildPartial();
+      public Example.ServiceResponse build() {
+        Example.ServiceResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -873,17 +1169,17 @@ public final class ExampleProto {
       }
 
       @java.lang.Override
-      public org.example.grpc.ExampleProto.HelloReply buildPartial() {
-        org.example.grpc.ExampleProto.HelloReply result = new org.example.grpc.ExampleProto.HelloReply(this);
+      public Example.ServiceResponse buildPartial() {
+        Example.ServiceResponse result = new Example.ServiceResponse(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.example.grpc.ExampleProto.HelloReply result) {
+      private void buildPartial0(Example.ServiceResponse result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.message_ = message_;
+          result.result_ = result_;
         }
       }
 
@@ -921,18 +1217,18 @@ public final class ExampleProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.example.grpc.ExampleProto.HelloReply) {
-          return mergeFrom((org.example.grpc.ExampleProto.HelloReply)other);
+        if (other instanceof Example.ServiceResponse) {
+          return mergeFrom((Example.ServiceResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.example.grpc.ExampleProto.HelloReply other) {
-        if (other == org.example.grpc.ExampleProto.HelloReply.getDefaultInstance()) return this;
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
+      public Builder mergeFrom(Example.ServiceResponse other) {
+        if (other == Example.ServiceResponse.getDefaultInstance()) return this;
+        if (!other.getResult().isEmpty()) {
+          result_ = other.result_;
           bitField0_ |= 0x00000001;
           onChanged();
         }
@@ -963,7 +1259,7 @@ public final class ExampleProto {
                 done = true;
                 break;
               case 10: {
-                message_ = input.readStringRequireUtf8();
+                result_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -984,73 +1280,73 @@ public final class ExampleProto {
       }
       private int bitField0_;
 
-      private java.lang.Object message_ = "";
+      private java.lang.Object result_ = "";
       /**
-       * <code>string message = 1;</code>
-       * @return The message.
+       * <code>string result = 1;</code>
+       * @return The result.
        */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
+      public java.lang.String getResult() {
+        java.lang.Object ref = result_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          message_ = s;
+          result_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string message = 1;</code>
-       * @return The bytes for message.
+       * <code>string result = 1;</code>
+       * @return The bytes for result.
        */
       public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
+          getResultBytes() {
+        java.lang.Object ref = result_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          message_ = b;
+          result_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string message = 1;</code>
-       * @param value The message to set.
+       * <code>string result = 1;</code>
+       * @param value The result to set.
        * @return This builder for chaining.
        */
-      public Builder setMessage(
+      public Builder setResult(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        message_ = value;
+        result_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>string message = 1;</code>
+       * <code>string result = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMessage() {
-        message_ = getDefaultInstance().getMessage();
+      public Builder clearResult() {
+        result_ = getDefaultInstance().getResult();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
-       * <code>string message = 1;</code>
-       * @param value The bytes for message to set.
+       * <code>string result = 1;</code>
+       * @param value The bytes for result to set.
        * @return This builder for chaining.
        */
-      public Builder setMessageBytes(
+      public Builder setResultBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        message_ = value;
+        result_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
@@ -1068,23 +1364,23 @@ public final class ExampleProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:HelloReply)
+      // @@protoc_insertion_point(builder_scope:test.ServiceResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:HelloReply)
-    private static final org.example.grpc.ExampleProto.HelloReply DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:test.ServiceResponse)
+    private static final Example.ServiceResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.example.grpc.ExampleProto.HelloReply();
+      DEFAULT_INSTANCE = new Example.ServiceResponse();
     }
 
-    public static org.example.grpc.ExampleProto.HelloReply getDefaultInstance() {
+    public static Example.ServiceResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<HelloReply>
-        PARSER = new com.google.protobuf.AbstractParser<HelloReply>() {
+    private static final com.google.protobuf.Parser<ServiceResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ServiceResponse>() {
       @java.lang.Override
-      public HelloReply parsePartialFrom(
+      public ServiceResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1103,32 +1399,32 @@ public final class ExampleProto {
       }
     };
 
-    public static com.google.protobuf.Parser<HelloReply> parser() {
+    public static com.google.protobuf.Parser<ServiceResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<HelloReply> getParserForType() {
+    public com.google.protobuf.Parser<ServiceResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.example.grpc.ExampleProto.HelloReply getDefaultInstanceForType() {
+    public Example.ServiceResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HelloRequest_descriptor;
+    internal_static_test_ServiceRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HelloRequest_fieldAccessorTable;
+      internal_static_test_ServiceRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HelloReply_descriptor;
+    internal_static_test_ServiceResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HelloReply_fieldAccessorTable;
+      internal_static_test_ServiceResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1138,28 +1434,34 @@ public final class ExampleProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rexample.proto\"\034\n\014HelloRequest\022\014\n\004name\030" +
-      "\001 \001(\t\"\035\n\nHelloReply\022\017\n\007message\030\001 \001(\t23\n\007" +
-      "Greeter\022(\n\010SayHello\022\r.HelloRequest\032\013.Hel" +
-      "loReply\"\000B \n\020org.example.grpcB\014ExamplePr" +
-      "otob\006proto3"
+      "\n\rexample.proto\022\004test\"@\n\016ServiceRequest\022" +
+      "\016\n\006param1\030\001 \001(\t\022\016\n\006param2\030\002 \001(\t\022\016\n\006param" +
+      "3\030\003 \001(\t\"!\n\017ServiceResponse\022\016\n\006result\030\001 \001" +
+      "(\t2\252\002\n\013TestService\0227\n\010Service1\022\024.test.Se" +
+      "rviceRequest\032\025.test.ServiceResponse\0227\n\010S" +
+      "ervice2\022\024.test.ServiceRequest\032\025.test.Ser" +
+      "viceResponse\0227\n\010Service3\022\024.test.ServiceR" +
+      "equest\032\025.test.ServiceResponse\0227\n\010Service" +
+      "4\022\024.test.ServiceRequest\032\025.test.ServiceRe" +
+      "sponse\0227\n\010Service5\022\024.test.ServiceRequest" +
+      "\032\025.test.ServiceResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_HelloRequest_descriptor =
+    internal_static_test_ServiceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_HelloRequest_fieldAccessorTable = new
+    internal_static_test_ServiceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HelloRequest_descriptor,
-        new java.lang.String[] { "Name", });
-    internal_static_HelloReply_descriptor =
+        internal_static_test_ServiceRequest_descriptor,
+        new java.lang.String[] { "Param1", "Param2", "Param3", });
+    internal_static_test_ServiceResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_HelloReply_fieldAccessorTable = new
+    internal_static_test_ServiceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HelloReply_descriptor,
-        new java.lang.String[] { "Message", });
+        internal_static_test_ServiceResponse_descriptor,
+        new java.lang.String[] { "Result", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
