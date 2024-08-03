@@ -18,7 +18,7 @@ import static java.lang.Thread.sleep;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-//        ApacheHttpExecute.main(null);
+        ApacheHttpExecute.main(null);
 
 //        var l = new Thread(() -> KafkaConsumerExecute.main(null));
 //        KafkaConsumerExecute.main(null);
@@ -35,7 +35,7 @@ public class Main {
 //        for(int i = 0; i < 1000; i++) {
 //            DubboClientApplication.main(null);
 //        }
-        JettyServer.main(null);
+//        JettyServer.main(null);
 //        var l =new Thread(() -> {
 //            try {
 //                TestServer.main(null);
@@ -57,6 +57,7 @@ public class Main {
 //
 //        l.interrupt();
 
+//        TestClient.main(null);
 
 //        GreeterClient.main(null);
 //        GrpcServer.main(null);

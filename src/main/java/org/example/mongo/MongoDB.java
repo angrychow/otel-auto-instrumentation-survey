@@ -7,27 +7,51 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Updates.set;
 
 public class MongoDB {
+
+    private static final int NUM_DATABASES = 5;
+    private static final int COLLECTIONS_PER_DB = 5;
+    private static final int NUM_NAMES = 10000;
 
     public static void main(String[] args) throws InterruptedException {
         // 连接到 MongoDB 服务器
         MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
 
-        // 访问数据库
-        MongoDatabase database = mongoClient.getDatabase("testdb");
+        // 创建数据库和集合名称
+        List<String> databases = new ArrayList<>();
+        List<String> collections = new ArrayList<>();
+        for (int i = 0; i < NUM_DATABASES; i++) {
+            databases.add("testdb" + i);
+            for (int j = 0; j < COLLECTIONS_PER_DB; j++) {
+                collections.add("testcollection" + (i * COLLECTIONS_PER_DB + j));
+            }
+        }
 
-        // 访问集合
-        MongoCollection<Document> collection = database.getCollection("testcollection");
+        // 创建人名
+        String[] names = new String[NUM_NAMES];
+        for (int i = 0; i < NUM_NAMES; i++) {
+            names[i] = "Person" + i;
+        }
 
         Random random = new Random();
-        String[] names = {"Alice", "Bob", "Charlie", "David", "Eve"};
 
         for (int i = 0; i < 1000000; i++) {
-            int operation = random.nextInt(3); // 0: 插入, 1: 查询, 2: 删除
+            int operation = random.nextInt(5); // 0: 插入, 1: 查询, 2: 删除, 3: 更新, 4: 查询并更新
             String name = names[random.nextInt(names.length)];
+            String dbName = databases.get((((name.hashCode()) % NUM_DATABASES) + NUM_DATABASES) % NUM_DATABASES);
+            String collectionName = collections.get(((name.hashCode() / NUM_DATABASES) % collections.size() + collections.size())%collections.size() );
+
+            // 访问数据库
+            MongoDatabase database = mongoClient.getDatabase(dbName);
+
+            // 访问集合
+            MongoCollection<Document> collection = database.getCollection(collectionName);
 
             switch (operation) {
                 case 0:
@@ -54,6 +78,24 @@ public class MongoDB {
                         System.out.println("Deleted: " + deleteDoc.toJson());
                     } else {
                         System.out.println("No document found to delete with name: " + name);
+                    }
+                    break;
+                case 3:
+                    // 更新文档
+                    Document updateDoc = collection.findOneAndUpdate(eq("name", name), set("age", random.nextInt(100)));
+                    if (updateDoc != null) {
+                        System.out.println("Updated: " + updateDoc.toJson());
+                    } else {
+                        System.out.println("No document found to update with name: " + name);
+                    }
+                    break;
+                case 4:
+                    // 查询并更新文档
+                    Document queryAndUpdateDoc = collection.findOneAndUpdate(eq("name", name), set("city", "City" + random.nextInt(100)));
+                    if (queryAndUpdateDoc != null) {
+                        System.out.println("Found and Updated: " + queryAndUpdateDoc.toJson());
+                    } else {
+                        System.out.println("No document found to update with name: " + name);
                     }
                     break;
             }

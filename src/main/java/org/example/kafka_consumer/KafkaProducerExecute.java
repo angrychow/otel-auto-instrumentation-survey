@@ -9,7 +9,7 @@ import java.util.Properties;
 import java.util.Random;
 
 public class KafkaProducerExecute {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String[] topics = {"topic-1", "topic-2", "topic-3", "topic-4", "topic-5"};
         Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -25,6 +25,7 @@ public class KafkaProducerExecute {
             String value = "value-" + random.nextInt(1000000);
             ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
             producer.send(record);
+            Thread.sleep(10);
         }
         producer.close();
     }

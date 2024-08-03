@@ -3,6 +3,8 @@ package org.example.grpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class TestClient {
@@ -25,8 +27,8 @@ public class TestClient {
         Random random = new Random();
         String[] options = {"option1", "option2", "option3", "option4"};
 
-        for (int i = 0; i < 10000000; i++) {
-            String randomParam = "random" + random.nextInt(10000);
+        for (int i = 0; i < 100; i++) {
+            String randomParam = "random" + random.nextInt(100);
             String param1 = options[random.nextInt(options.length)];
             String param2 = options[random.nextInt(options.length)];
             String param3 = randomParam;
@@ -65,11 +67,34 @@ public class TestClient {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        TestClient client = new TestClient("localhost", 8080);
-        try {
-            client.testServices();
-        } finally {
-            client.shutdown();
+        Random random = new Random();
+        int numClients = 10;
+        ExecutorService executorService = Executors.newFixedThreadPool(numClients);
+
+        // 创建并发任务
+        for (int i = 0; i < 1000; i++) {
+            executorService.submit(() -> {
+                String host = "mock" + random.nextInt(10) + ".local";
+                int port = 8080;
+                TestClient client = new TestClient(host, port);
+
+                try {
+                    client.testServices();
+                } finally {
+                    try {
+                        client.shutdown();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+        }
+
+        // 关闭线程池
+        executorService.shutdown();
+        while (!executorService.isTerminated()) {
+            Thread.sleep(100000);  // 等待所有任务完成
         }
     }
+
 }
